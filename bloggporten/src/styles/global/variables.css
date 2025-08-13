@@ -11,4 +11,7 @@
 
 	--font-headings: 'Oi', serif;
 	--font-text: 'Lexend', sans-serif;
+
+	--gap: 1rem;
+	--page-margin: 1rem;
 }
