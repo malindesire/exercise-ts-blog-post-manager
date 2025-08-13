@@ -34,3 +34,28 @@ a {
 a:hover {
 	color: var(--color-light-plum);
 }
+
+button {
+	background-color: var(--color-plum);
+	border: none;
+	padding: 0.5rem;
+	color: var(--color-yellow);
+	font-family: var(--font-headings);
+	border-radius: 2rem;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+	color: var(--color-plum);
+}
+
+input,
+textarea {
+	border: none;
+	border-radius: 0.5rem;
+}
+
+input {
+	height: 2rem;
+}
