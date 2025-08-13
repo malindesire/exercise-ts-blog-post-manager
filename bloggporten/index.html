@@ -1,17 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend&family=Oi&display=swap" rel="stylesheet">
-    <title>Bloggporten</title>
-  </head>
-  <body>
-    <div id="app">
-      <h1>Hej Bloggportalen!</h1>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lexend&family=Oi&display=swap" rel="stylesheet">
+		<title>Bloggporten</title>
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="title">Bloggporten</h1>
+		</header>
+		<main class="main">
+			<section class="post-section">
+				<h2>Blogginlägg</h2>
+				<ul class="posts">
+					<li class="post">
+						<h3 class="post-title">Lorem ipsum sit</h3>
+						<p class="post-author">Monika Författarinna</p>
+						<p class="post-content">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum pariatur obcaecati rem itaque nulla cumque nihil eum officiis ipsum temporibus quidem tenetur vitae, aliquid blanditiis, rerum perferendis ut aperiam qui?
+						</p>
+						<span class="post-time">2025-07-27</span>
+					</li>
+				</ul>
+			</section>
+			<aside class="form-section">
+				<h2>Skapa ett inlägg</h2>
+				<form class="form">
+					<label for="">
+						Titel
+						<input type="text">
+					</label>
+					<label for="">
+						Inlägg
+						<textarea rows="10"></textarea>
+					</label>
+					<button type="submit">Publicera</button>
+				</form>
+			</aside>
+		</main>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
 </html>
