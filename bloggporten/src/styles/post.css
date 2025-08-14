@@ -1,0 +1,18 @@
+.post-section {
+	width: 70%;
+}
+
+.posts {
+	list-style: none;
+	padding: 0;
+	margin: var(--page-margin) 0;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+	border-bottom: 0.2rem solid var(--color-plum);
+	border-radius: 0.3rem;
+	padding: var(--page-margin) 0;
+}

@@ -5,7 +5,7 @@
 	--color-plum: #85094b;
 	--color-light-plum: #bb0e6a;
 
-	--color-text: var(--color-white);
+	--color-text: var(--color-plum);
 	--color-headings: var(--color-yellow);
 	--color-background: var(--color-pink);
 

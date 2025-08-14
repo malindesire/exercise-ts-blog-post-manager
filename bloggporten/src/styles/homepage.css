@@ -12,15 +12,6 @@
 	gap: var(--extra-gap);
 }
 
-.post-section {
-	width: 70%;
-}
-
-.posts {
-	list-style: none;
-	padding: 0;
-}
-
 .form {
 	display: flex;
 	flex-direction: column;
