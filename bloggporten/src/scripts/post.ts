@@ -2,6 +2,7 @@ import type { Post } from './types';
 
 const storageKey = import.meta.env.VITE_LOCAL_STORAGE_KEY;
 const postList = document.querySelector<HTMLUListElement>('[data-posts]');
+const filter = document.querySelector<HTMLFormElement>('[data-filter]');
 
 const getPosts = (): Post[] => {
 	const data = localStorage.getItem(storageKey);
@@ -86,9 +87,10 @@ const createPostItem = (post: Post) => {
 	return newItem;
 };
 
-export const renderPosts = () => {
-	const posts = getPosts();
-
+export const renderPosts = (
+	posts = getPosts().sort((a, b) => a.createdAt - b.createdAt)
+) => {
+	postList?.replaceChildren();
 	posts.forEach((post) => {
 		const postItem = createPostItem(post);
 		postList?.appendChild(postItem);
@@ -102,4 +104,30 @@ postList?.addEventListener('click', (e: MouseEvent) => {
 
 	if (target.closest('[data-delete-btn]')) deletePost(postId);
 	if (target.closest('[data-edit-btn]')) updatePost(postId);
+});
+
+filter?.addEventListener('change', () => {
+	const date = filter.querySelector<HTMLInputElement>('[data-filter-date]');
+	const author = filter.querySelector<HTMLInputElement>(
+		'[data-filter-author]'
+	);
+
+	if (date?.checked) {
+		renderPosts();
+	}
+
+	if (author?.checked) {
+		const posts = getPosts().sort((a, b) => {
+			const authorA = a.author.toUpperCase(); // ignore upper and lowercase
+			const authorB = b.author.toUpperCase(); // ignore upper and lowercase
+			if (authorA < authorB) {
+				return -1;
+			}
+			if (authorA > authorB) {
+				return 1;
+			}
+			return 0;
+		});
+		renderPosts(posts);
+	}
 });

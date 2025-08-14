@@ -15,6 +15,11 @@
 		<main class="main">
 			<section class="post-section">
 				<h2>Blogginlägg</h2>
+				<form class="filter" data-filter>
+					<h3>Sortera på:</h3>
+					<label class="radio-btn">Datum<input type="radio" name="filter" checked id="date" data-filter-date></label>
+					<label class="radio-btn">Författare<input type="radio" name="filter" id="author" data-filter-author></label>
+				</form>
 				<ul class="posts" data-posts></ul>
 			</section>
 			<aside class="form-section">
