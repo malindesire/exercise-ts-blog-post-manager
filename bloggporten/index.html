@@ -28,14 +28,18 @@
 			</section>
 			<aside class="form-section">
 				<h2>Skapa ett inlägg</h2>
-				<form class="form">
+				<form class="form" data-add-post-form>
 					<label for="">
 						Titel
-						<input type="text">
+						<input type="text" data-input-title>
 					</label>
 					<label for="">
 						Inlägg
-						<textarea rows="10"></textarea>
+						<textarea rows="10" data-input-content></textarea>
+					</label>
+					<label for="">
+						Namn
+						<input type="text" data-input-author>
 					</label>
 					<button type="submit">Publicera</button>
 				</form>
