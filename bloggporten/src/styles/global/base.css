@@ -42,6 +42,7 @@ button {
 	color: var(--color-yellow);
 	font-family: var(--font-headings);
 	border-radius: 2rem;
+	cursor: pointer;
 }
 
 label {
@@ -69,9 +70,14 @@ label:has(input[type='radio']) {
 	padding: 0.5rem;
 }
 
-label:has(input[type='radio']:checked) {
+label:has(input[type='radio']:checked),
+label:has(input[type='radio']:hover) {
 	background-color: var(--color-plum);
 	color: var(--color-light-plum);
+}
+
+label:has(input[type='radio']:not(:checked)) {
+	cursor: pointer;
 }
 
 input[type='radio'] {
