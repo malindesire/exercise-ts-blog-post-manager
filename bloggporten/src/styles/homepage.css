@@ -9,7 +9,7 @@
 	max-width: 70rem;
 	margin-left: auto;
 	margin-right: auto;
-	gap: var(--gap);
+	gap: var(--extra-gap);
 }
 
 .post-section {
