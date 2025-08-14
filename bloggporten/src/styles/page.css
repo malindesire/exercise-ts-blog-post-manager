@@ -21,6 +21,7 @@
 
 .filter-heading {
 	font-family: var(--font-text);
+	color: var(--color-text);
 }
 
 .post-section {
