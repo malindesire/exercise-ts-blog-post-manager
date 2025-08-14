@@ -88,7 +88,7 @@ const createPostItem = (post: Post) => {
 };
 
 export const renderPosts = (
-	posts = getPosts().sort((a, b) => a.createdAt - b.createdAt)
+	posts = getPosts().sort((a, b) => b.createdAt - a.createdAt)
 ) => {
 	postList?.replaceChildren();
 	posts.forEach((post) => {
