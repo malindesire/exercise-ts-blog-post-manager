@@ -3,12 +3,11 @@ import { savePost } from './post';
 import { v4 as generateId } from 'uuid';
 
 const form = document.querySelector<HTMLFormElement>('[data-add-post-form]');
-const inputTitle =
-	document.querySelector<HTMLInputElement>('[data-input-title]');
-const inputContent = document.querySelector<HTMLTextAreaElement>(
+const inputTitle = form?.querySelector<HTMLInputElement>('[data-input-title]');
+const inputContent = form?.querySelector<HTMLTextAreaElement>(
 	'[data-input-content]'
 );
-const inputAuthor = document.querySelector<HTMLTextAreaElement>(
+const inputAuthor = form?.querySelector<HTMLTextAreaElement>(
 	'[data-input-author]'
 );
 
