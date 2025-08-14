@@ -14,10 +14,38 @@ export const savePost = (post: Post) => {
 	localStorage.setItem(storageKey, JSON.stringify(posts));
 };
 
+const updatePost = (id: string) => {
+	document.querySelector<HTMLElement>(`#form-${id}`)!.style.display = 'flex';
+	const btn = document.querySelector<HTMLButtonElement>(`#btn-${id}`);
+
+	btn?.addEventListener('click', () => {
+		const posts = getPosts().map((post) => {
+			const updated: Post = {
+				id: id,
+				title:
+					document.querySelector<HTMLInputElement>(`#title-${id}`)
+						?.value ?? '',
+				content:
+					document.querySelector<HTMLInputElement>(`#content-${id}`)
+						?.value ?? '',
+				author:
+					document.querySelector<HTMLInputElement>(`#author-${id}`)
+						?.value ?? '',
+				createdAt: post.createdAt,
+			};
+
+			return post.id === id ? updated : post;
+		});
+
+		localStorage.setItem(storageKey, JSON.stringify(posts));
+		location.reload();
+	});
+};
+
 const deletePost = (id: string) => {
 	const posts = getPosts().filter((post) => post.id !== id);
 	localStorage.setItem(storageKey, JSON.stringify(posts));
-	renderPosts();
+	location.reload();
 };
 
 const createPostItem = (post: Post) => {
@@ -30,6 +58,21 @@ const createPostItem = (post: Post) => {
 		<p class="post-content">${post.content}</p>
 		<span class="post-time">${post.createdAt}</span>
 		<div>
+			<form class="form form-edit" id="form-${post.id}">
+				<label>
+					Titel
+					<input type="text" id="title-${post.id}" value="${post.title}">
+				</label>
+				<label>
+					Inlägg
+					<textarea rows="10" id="content-${post.id}">${post.content}</textarea>
+				</label>
+				<label>
+					Namn
+					<input type="text" id="author-${post.id}" value="${post.author}">
+				</label>
+				<button type="button" id="btn-${post.id}">Redigera</button>
+			</form>
 			<button class="edit-btn material-symbols-outlined" data-edit-btn data-post-id=${post.id}>edit</button>
 			<button class="delete-btn material-symbols-outlined" data-delete-btn data-post-id=${post.id}>delete</button>
 		</div>
@@ -53,4 +96,5 @@ postList?.addEventListener('click', (e: MouseEvent) => {
 	if (!postId) return;
 
 	if (target.closest('[data-delete-btn]')) deletePost(postId);
+	if (target.closest('[data-edit-btn]')) updatePost(postId);
 });
