@@ -34,4 +34,5 @@ form?.addEventListener('submit', (e) => {
 	};
 
 	savePost(newPost);
+	location.reload();
 });
