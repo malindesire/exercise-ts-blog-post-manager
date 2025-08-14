@@ -7,7 +7,7 @@ const mockPosts: Post[] = [
 		content:
 			'Det här är vårt allra första inlägg där vi berättar om vad som kommer härnäst. Häng med på resan!',
 		author: 'Anna Svensson',
-		createdAt: '2025-08-01',
+		createdAt: 1754043300,
 	},
 	{
 		id: '2',
@@ -15,7 +15,7 @@ const mockPosts: Post[] = [
 		content:
 			'Att strukturera din arbetsdag kan ge dig mer energi och fokus. Här är fem enkla men effektiva tips.',
 		author: 'Johan Karlsson',
-		createdAt: '2025-08-02',
+		createdAt: 1754113800,
 	},
 	{
 		id: '3',
@@ -23,7 +23,7 @@ const mockPosts: Post[] = [
 		content:
 			'En guide för dig som vill starta och driva en framgångsrik e-handelsbutik från grunden.',
 		author: 'Lisa Berg',
-		createdAt: '2025-08-03',
+		createdAt: 1754222700,
 	},
 	{
 		id: '4',
@@ -31,7 +31,7 @@ const mockPosts: Post[] = [
 		content:
 			'Hösten 2025 bjuder på mustiga toner och spännande material. Här är våra favoriter.',
 		author: 'Emma Lind',
-		createdAt: '2025-08-04',
+		createdAt: 1754308200,
 	},
 	{
 		id: '5',
@@ -39,7 +39,7 @@ const mockPosts: Post[] = [
 		content:
 			'Bali är mer än bara stränder – här hittar du kultur, natur och fantastiska människor.',
 		author: 'Anders Nilsson',
-		createdAt: '2025-08-05',
+		createdAt: 1754391600,
 	},
 	{
 		id: '6',
@@ -47,7 +47,7 @@ const mockPosts: Post[] = [
 		content:
 			'Vi träffade en expert som delade sina bästa tips för att lyckas med Shopify Storefront API.',
 		author: 'Sara Ek',
-		createdAt: '2025-08-06',
+		createdAt: 1754506800,
 	},
 	{
 		id: '7',
@@ -55,7 +55,7 @@ const mockPosts: Post[] = [
 		content:
 			'Med några enkla knep kan du göra din TypeScript-kod både snabbare och mer lättläst.',
 		author: 'David Larsson',
-		createdAt: '2025-08-07',
+		createdAt: 1754562600,
 	},
 	{
 		id: '8',
@@ -63,7 +63,7 @@ const mockPosts: Post[] = [
 		content:
 			'Vi tar en titt på historien bakom Sveriges mest framgångsrika fotbollsklubb.',
 		author: 'Karin Holm',
-		createdAt: '2025-08-08',
+		createdAt: 1754664300,
 	},
 ];
 

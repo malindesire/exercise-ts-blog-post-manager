@@ -14,18 +14,12 @@ const inputAuthor = form?.querySelector<HTMLTextAreaElement>(
 form?.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-	const today = new Date();
-	const year = today.getFullYear();
-	const month = today.getMonth() + 1;
-	const date = today.getDate();
-	const createdAt = `${year}-${month}-${date}`;
-
 	const newPost: Post = {
 		id: generateId(),
 		title: inputTitle?.value ?? '',
 		content: inputContent?.value ?? '',
 		author: inputAuthor?.value ?? '',
-		createdAt: createdAt,
+		createdAt: Date.now(),
 	};
 
 	savePost(newPost);

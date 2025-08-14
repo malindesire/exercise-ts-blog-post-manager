@@ -52,11 +52,16 @@ const createPostItem = (post: Post) => {
 	const newItem = document.createElement('li');
 	newItem.classList.add('post');
 
+	const createdAt = new Date(post.createdAt * 1000);
+	const formatCreatedAt = `${createdAt.getFullYear()}-${
+		createdAt.getMonth() + 1
+	}-${createdAt.getDate()}`;
+
 	newItem.innerHTML = `
 		<h3 class="post-title">${post.title}</h3>
 		<p class="post-author">${post.author}</p>
 		<p class="post-content">${post.content}</p>
-		<span class="post-time">${post.createdAt}</span>
+		<span class="post-time">${formatCreatedAt}</span>
 		<div>
 			<form class="form form-edit" id="form-${post.id}">
 				<label>
