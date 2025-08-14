@@ -59,3 +59,23 @@ textarea {
 input {
 	height: 2rem;
 }
+
+label:has(input[type='radio']) {
+	background-color: var(--color-light-plum);
+	color: var(--color-plum);
+	font-family: var(--font-headings);
+	font-size: 0.8rem;
+	border-radius: 2rem;
+	padding: 0.5rem;
+}
+
+label:has(input[type='radio']:checked) {
+	background-color: var(--color-plum);
+	color: var(--color-light-plum);
+}
+
+input[type='radio'] {
+	appearance: none;
+	height: 0;
+	width: 0;
+}

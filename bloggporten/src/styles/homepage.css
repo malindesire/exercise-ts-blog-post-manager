@@ -12,6 +12,17 @@
 	gap: var(--extra-gap);
 }
 
+.filter {
+	display: flex;
+	gap: var(--gap);
+	align-items: center;
+	margin-top: var(--page-margin);
+}
+
+.filter-heading {
+	font-family: var(--font-text);
+}
+
 .form {
 	display: flex;
 	flex-direction: column;
