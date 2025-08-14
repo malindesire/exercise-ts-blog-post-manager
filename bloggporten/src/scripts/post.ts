@@ -16,7 +16,14 @@ export const savePost = (post: Post) => {
 };
 
 const updatePost = (id: string) => {
-	document.querySelector<HTMLElement>(`#form-${id}`)!.style.display = 'flex';
+	const editForm = document.querySelector<HTMLElement>(`#form-${id}`);
+	if (!editForm) return;
+	if (editForm.style.display === 'flex') {
+		editForm.style.display = 'none';
+		return;
+	}
+
+	editForm.style.display = 'flex';
 	const btn = document.querySelector<HTMLButtonElement>(`#btn-${id}`);
 
 	btn?.addEventListener('click', () => {
