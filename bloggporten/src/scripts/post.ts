@@ -3,7 +3,7 @@ import type { Post } from './types';
 const storageKey = import.meta.env.VITE_LOCAL_STORAGE_KEY;
 const postList = document.querySelector<HTMLUListElement>('[data-posts]');
 
-export const getPosts = (): Post[] => {
+const getPosts = (): Post[] => {
 	const data = localStorage.getItem(storageKey);
 	return data ? JSON.parse(data) : [];
 };
@@ -12,6 +12,12 @@ export const savePost = (post: Post) => {
 	const posts = getPosts();
 	posts.push(post);
 	localStorage.setItem(storageKey, JSON.stringify(posts));
+};
+
+const deletePost = (id: string) => {
+	const posts = getPosts().filter((post) => post.id !== id);
+	localStorage.setItem(storageKey, JSON.stringify(posts));
+	renderPosts();
 };
 
 const createPostItem = (post: Post) => {
@@ -40,3 +46,11 @@ export const renderPosts = () => {
 		postList?.appendChild(postItem);
 	});
 };
+
+postList?.addEventListener('click', (e: MouseEvent) => {
+	const target = e.target as HTMLElement;
+	const postId = target.dataset.postId;
+	if (!postId) return;
+
+	if (target.closest('[data-delete-btn]')) deletePost(postId);
+});
