@@ -19,10 +19,14 @@ const createPostItem = (post: Post) => {
 	newItem.classList.add('post');
 
 	newItem.innerHTML = `
-		<h3 class="post-title" data-post-title>${post.title}</h3>
-		<p class="post-author" data-post-author>${post.author}</p>
-		<p class="post-content" data-post-content>${post.content}</p>
-		<span class="post-time" data-post-created>${post.createdAt}</span>
+		<h3 class="post-title">${post.title}</h3>
+		<p class="post-author">${post.author}</p>
+		<p class="post-content">${post.content}</p>
+		<span class="post-time">${post.createdAt}</span>
+		<div>
+			<button class="edit-btn material-symbols-outlined" data-edit-btn data-post-id=${post.id}>edit</button>
+			<button class="delete-btn material-symbols-outlined" data-delete-btn data-post-id=${post.id}>delete</button>
+		</div>
 	`;
 
 	return newItem;
