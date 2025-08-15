@@ -60,7 +60,7 @@ const createPostItem = (post: Post) => {
 	const newItem = document.createElement('li');
 	newItem.classList.add('post');
 
-	const createdAt = new Date(post.createdAt * 1000);
+	const createdAt = new Date(post.createdAt);
 	const formatCreatedAt = `${createdAt.getFullYear()}-${
 		createdAt.getMonth() + 1
 	}-${createdAt.getDate()}`;
