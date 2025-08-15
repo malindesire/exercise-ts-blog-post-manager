@@ -1,5 +1,13 @@
 # Blog Post Manager
 
+## How to start the project
+You need to add a .env file in the "bloggporten" folder with the key "VITE_LOCAL_STORAGE_KEY" and an optional string as the value.
+eg. `VITE_LOCAL_STORAGE_KEY="posts"`
+
+Then run `nvm use` and `npm run dev`.
+
+## About the exercise
+
 In this exercise, you will build a simple blog post manager using **Vanilla TypeScript** and **Vite**. The goal is not to create a fully-fledged blogging platform, but to practice DOM manipulation, events, _( local storage - extra )_, and basic styling.
 
 Remember to create a vite project before you start. You can do it in this folder after you have cloned the repo _( If you choose to clone it.. )_. The new vite project will be in a subfolder to this project.
