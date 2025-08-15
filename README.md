@@ -4,7 +4,7 @@
 You need to add a .env file in the "bloggporten" folder with the key "VITE_LOCAL_STORAGE_KEY" and an optional string as the value.
 eg. `VITE_LOCAL_STORAGE_KEY="posts"`
 
-Then run `nvm use` followed by `npm install` and `npm run dev`, follow the localhost-link in the terminal to view the application.
+Then run `nvm use` followed by `npm install` and `npm run dev`. Follow the localhost-link in the terminal to view the application.
 
 ## About the exercise
 
